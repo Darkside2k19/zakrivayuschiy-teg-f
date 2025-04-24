@@ -138,7 +138,7 @@
 }
 
 .button:hover {
-  box-shadow: 3px 3px 4px;
+  box-shadow: 2px 2px;
 }
 
 .button::before {
@@ -187,8 +187,11 @@
   transition: border 0.3s ease;
 }
 
-.card__icon-button:focus-visible {
+.card__icon-button:focus {
   outline: none;
+}
+
+.card__icon-button:focus-visible {
   border: 2px solid rgb(0, 0, 0);
 }
 
