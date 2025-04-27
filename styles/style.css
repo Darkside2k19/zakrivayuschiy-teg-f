@@ -65,14 +65,14 @@
 }
 
 .card__title {
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   font-size: 18px;
   padding: 5px 10px;
   border-bottom: 2px solid rgb(0, 0, 0);
 }
 
 .card__text {
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
 }
 
 .card__content {
@@ -137,8 +137,8 @@
   transition:  box-shadow 0.3s ease;
 }
 
-.button:hover {
-  box-shadow: 2px 2px;
+.button:focus {
+  outline: none;
 }
 
 .button::before {
@@ -153,7 +153,7 @@
 }
 
 .button:focus-visible {
-  outline: none;
+  box-shadow: 2px 2px 0 #000;
 }
 
 .button:hover::before {
@@ -192,6 +192,7 @@
 }
 
 .card__icon-button:focus-visible {
+  outline: none;
   border: 2px solid rgb(0, 0, 0);
 }
 
@@ -200,7 +201,7 @@
 }
 
 .card__icon-button:active .main-body {
-  fill: var(--contour-color);
+  fill:var(--contour-color);
   transition: fill 0.3s linear 0.05s;
 }
 
@@ -222,6 +223,16 @@
 .like-icon {
   display: block;
   max-height: 35px;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
 }
 
 .core {
@@ -250,6 +261,7 @@
 }
 
 .like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
   transition: fill 0.3s linear 0.06s;
 }
 
@@ -290,6 +302,7 @@
   @media (width <= 375px) {
     width: 28px;
   }
+
 }
 
 .dialog__text {
@@ -300,7 +313,7 @@
 }
 
 .dialog-icon {
-  width: 39px;
+  width: 38px;
 }
 
 dialog[open] {
@@ -369,4 +382,10 @@ dialog:not([open]) {
 
 .rotate-opacity {
   filter: hue-rotate(90deg) opacity(0.7);
+}
+
+@media(width <= 375px) {
+  dialog[open] {
+    padding: 20px 38.5px;
+  }
 }
